@@ -1,0 +1,160 @@
+/* ==========================================================================
+   VARIABLES DE DISEÑO: MODO OSCURO PROFESIONAL
+   ========================================================================== */
+:root {
+  --bg-main: #0d1117;       /* Fondo oscuro profundo (Estilo GitHub/VSCode) */
+  --bg-sidebar: #161b22;    /* Fondo de la barra lateral ligeramente más claro */
+  --bg-card: #21262d;       /* Fondo de las tarjetas y bloques */
+  --border: #30363d;        /* Bordes sutiles de consola */
+  --accent: #2ea44f;        /* Verde de éxito / terminal activa */
+  --accent-blue: #58a6ff;   /* Azul para enlaces e hitos importantes */
+  --text-main: #c9d1d9;     /* Texto principal suave para la vista */
+  --text-title: #f0f6fc;    /* Blanco brillante para títulos principales */
+  --text-muted: #8b949e;    /* Gris para fechas y descripciones secundarias */
+  --font-code: 'Fira Code', 'Courier New', Courier, monospace;
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+}
+
+/* Base del documento */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Layout Principal */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.app-main {
+  flex-grow: 1;
+  margin-left: 280px; /* Ancho de la barra lateral */
+  min-height: 100vh;
+  background-color: var(--bg-main);
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .app-main {
+    margin-left: 0;
+    padding-top: 60px;
+  }
+}
+
+/* Contenedores de Páginas */
+.page-container {
+  padding: 50px 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 30px 20px;
+  }
+}
+
+.page-header {
+  margin-bottom: 35px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 20px;
+}
+
+.page-label {
+  font-family: var(--font-code);
+  color: var(--accent);
+  font-size: 14px;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.page-title {
+  color: var(--text-title);
+  margin: 0 0 10px 0;
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  color: var(--text-muted);
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Grids y Tarjetas Estilo Componente */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 30px;
+  align-items: start;
+}
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.about-card {
+  background: var(--bg-sidebar);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 24px;
+}
+
+.about-section-title {
+  color: var(--text-title);
+  font-size: 18px;
+  margin: 0 0 15px 0;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  font-family: var(--font-code);
+}
+
+.about-text {
+  font-size: 15px;
+  line-height: 160%;
+  color: var(--text-main);
+}
+
+/* Elementos de Consola / Tags */
+.skill-tag {
+  font-family: var(--font-code);
+  font-size: 12px;
+  padding: 4px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text-title);
+}
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 14px;
+}
+
+.info-link {
+  color: var(--accent-blue);
+  text-decoration: none;
+}
+
+.info-link:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,158 @@
+.skills-full-page {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skills-main-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 20px;
+}
+
+/* Selector de tarjetas */
+.skills-grid-selector {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.skill-card-btn {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  text-align: left;
+}
+
+.skill-card-btn:hover {
+  border-color: #8b949e;
+  transform: translateY(-2px);
+  background-color: #1c2128;
+}
+
+.skill-card-btn.is-active {
+  border-color: #58a6ff;
+  background-color: rgba(88, 166, 255, 0.05);
+  box-shadow: 0 0 20px rgba(88, 166, 255, 0.1);
+}
+
+.skill-card-icon-wrapper {
+  width: 40px;
+  height: 40px;
+  background-color: #0d1117;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #30363d;
+}
+
+.skill-card-img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.skill-card-text {
+  color: #c9d1d9;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.skill-card-btn.is-active .skill-card-text {
+  color: #58a6ff;
+}
+
+/* Panel de Detalle Inferior */
+.skills-detail-panel {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  padding: 40px;
+  min-height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+
+.skills-detail-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background-color: #58a6ff;
+}
+
+.detail-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 40px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #30363d;
+}
+
+.detail-large-logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.detail-label {
+  display: block;
+  font-size: 12px;
+  color: #8b949e;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+
+.detail-title {
+  font-size: 32px;
+  color: #f0f6fc;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* Píldoras de tecnología */
+.detail-items-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.detail-pill {
+  background-color: #0d1117;
+  border: 1px solid #30363d;
+  padding: 12px 20px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.detail-pill:hover {
+  border-color: #58a6ff;
+  background-color: #161b22;
+}
+
+.pill-number {
+  color: #58a6ff;
+  font-size: 11px;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+.pill-text {
+  color: #c9d1d9;
+  font-size: 14px;
+}
