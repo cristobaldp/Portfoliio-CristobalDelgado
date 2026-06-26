@@ -24,8 +24,21 @@ import flujoGeneralKm from "../assets/DiagramaFlujoKm.png";
 import portadaMovilKm from "../assets/Kilometro.jpg"; 
 
 // IMPORTACIONES PROYECTO 4: SECUREDROP (CRIPTOGRAFÍA & SEGURIDAD)
-import portadaSecureDrop from "../assets/Criptografia1.jpg"; // <-- Guarda aquí el logo de tu proyecto o de Java/Seguridad
+import portadaSecureDrop from "../assets/Criptografia1.jpg"; 
 import esquemaCriptografia from "../assets/Criptografia.png";
+
+// IMPORTACIONES PROYECTO 5: MEMORY CARD GAME
+import portadaJuegoMemoria from "../assets/JuegoMemoria.png";
+
+// IMPORTACIONES PROYECTO 6: CHAMPIONS GAMES
+import portadaChampionsGames from "../assets/ChampionsGame.jpg";
+import esquemaBBDDChampions from "../assets/DiagramaEntidadRelacionChampionsGame.png";
+import ganttChampions from "../assets/DiagramaGantChampionsGame.png";
+import memoriaChampionsGames from "../assets/Documentación_Champions_Game.pdf";
+
+// IMPORTACIONES PROYECTO 7: MI PRIMER JUEGO 3D (GODOT)
+import portadaGodot3D from "../assets/Zapy.png";
+import memoriaGodot3D from "../assets/Mi_primer_Juego_3D.pdf";
 
 const projectsData = [
   {
@@ -64,13 +77,13 @@ const projectsData = [
   {
     id: 3,
     title: "Kilómetro a Kilómetro (Mobile)",
-    subtitle: "Portabilidad Móvil — Interfaz de Usuario Declarativa y Reactiva",
+    subtitle: "Portabilidad Móvil — Variante de la Aplicación de Escritorio",
     category: "Android Native / Kotlin",
     image: portadaMovilKm,
     dbImage: esquemaKilometro,
     pdfDocumentation: memoriaPdfKm,
-    shortDescription: "Ecosistema móvil nativo para Android del software de control de combustible y gastos. Desarrollado íntegramente en Android Studio utilizando Kotlin y Jetpack Compose para conseguir una interfaz totalmente moderna, fluida y reactiva. Implementa una base de datos local SQLite (Room/SQLDelight) sincronizada con las reglas de negocio estructurales del proyecto de ingeniería original.",
-    technologies: ["Kotlin", "Jetpack Compose", "Android Studio", "SQLite3", "Material Design 3", "Git"],
+    shortDescription: "Variante móvil oficial del software de control de combustible y gastos para escritorio. Diseñado íntegramente en Android Studio utilizando Kotlin y Jetpack Compose para conseguir una interfaz totalmente moderna, fluida y reactiva. Implementa una base de datos local SQLite (Room/SQLDelight) sincronizada con las reglas de negocio estructurales del proyecto de ingeniería original, comunicándose directamente con la versión de escritorio mediante servicios Web distribuidos sobre una API REST en FastAPI.",
+    technologies: ["Kotlin", "Jetpack Compose", "FastAPI", "Android Studio", "SQLite3", "Material Design 3"],
     githubUrl: "https://github.com/cristobaldp/Kilometro_A_Kilometro_Kotlin",
     architectureDiagrams: [
       { label: "👤 Casos de Uso", img: casosUsoKm },
@@ -86,9 +99,9 @@ const projectsData = [
   {
     id: 4,
     title: "SecureDrop: Proyecto de Securización",
-    subtitle: "Ingeniería de la Seguridad — Criptografía Aplicada Cliente-Servidor",
+    subtitle: "Engineering de la Seguridad — Criptografía Aplicada Cliente-Servidor",
     category: "Java / Cybersecurity",
-    image: portadaSecureDrop, // <-- Vinculado el logo aquí
+    image: portadaSecureDrop,
     dbImage: null,
     shortDescription: "Auditoría de código, refactorización y fortificación (hardening) de una aplicación cliente-servidor basada en sockets TCP en Java. El objetivo principal es migrar la versión inestable y expuesta v1 hacia SecureDrop v2 implementando comunicaciones seguras mediante TLS, almacenamiento de contraseñas con Hash + Salt, cifrado simétrico AES-GCM para datos en disco y control de acceso robusto por roles con logs de auditoría.",
     technologies: ["Java", "Java Sockets", "Cryptography (AES/RSA)", "TLS / SSL", "PBKDF2 / SHA-256", "Cybersecurity"],
@@ -96,6 +109,45 @@ const projectsData = [
     architectureDiagrams: [
       { label: "🔐 Esquema Criptográfico (v2)", img: esquemaCriptografia }
     ]
+  },
+  {
+    id: 5,
+    title: "¡Encuentra la Pareja! — Juego de Memoria",
+    subtitle: "Diversión Móvil Nativa — Sonidos de Animales y Puntuaciones",
+    category: "Android / Videojuego Infantil",
+    image: portadaJuegoMemoria,
+    dbImage: null,
+    shortDescription: "¡Un divertido juego interactivo para que los más pequeños de la casa entrenen su mente! Los niños tendrán que dar la vuelta a las cartas para encontrar los animales idénticos. ¡Cada vez que descubran un animal correcto, escucharán su sonido real como un caballo, un cerdito o una vaca! Cuenta con un sistema mágico que guarda las mejores puntuaciones para motivarlos a superarse en cada partida.",
+    technologies: ["Java", "Android Studio", "Dibujos XML", "Reproductor de Sonidos", "Lógica de Estados"],
+    githubUrl: "https://github.com/cristobaldp/Game-Card"
+  },
+  {
+    id: 6,
+    title: "Champions Games — ¡Elige tu Videojuego Favorito!",
+    subtitle: "Desarrollo Colaborativo (Full-Stack) — Plataforma Interactiva de Votación",
+    category: "Full-Stack MERN / Web",
+    image: portadaChampionsGames,
+    dbImage: null,
+    pdfDocumentation: memoriaChampionsGames,
+    shortDescription: "Plataforma web de entretenimiento desarrollada en equipo enfocada en la gamificación de preferencias de usuario. Diseñada bajo arquitectura MERN, implementa una SPA dinámica con React conectada a un servidor backend robusto en Node.js y Express.js, gestionando la persistencia NoSQL distribuida en MongoDB Atlas. Todo el ecosistema de la API REST fue testeado y auditado minuciosamente mediante Postman para garantizar respuestas ágiles en las rondas de votación.",
+    technologies: ["React", "Node.js", "Express.js", "MongoDB Atlas", "Postman", "Figma", "Mermaid"],
+    githubUrl: "https://github.com/cristobaldp/PaginaWeb_ChampionsGames-master",
+    architectureDiagrams: [
+      { label: "📊 Diagrama Entidad-Relación", img: esquemaBBDDChampions },
+      { label: "📅 Diagrama Gantt", img: ganttChampions }
+    ]
+  },
+  {
+    id: 7,
+    title: "Mi Primer Juego 3D — Zapy Adventure",
+    subtitle: "Desarrollo de Videojuegos — Arquitectura Modular en Motores 3D",
+    category: "Godot / GDScript 3D",
+    image: portadaGodot3D,
+    dbImage: null,
+    pdfDocumentation: memoriaGodot3D,
+    shortDescription: "Videojuego de plataformas interactivo en tres dimensiones desarrollado sobre el motor Godot Engine. Diseñé y programé una arquitectura modular controlada íntegramente por scripts estructurados (.gd), encargados del cálculo vectorial de físicas del jugador, cinemática de cámaras, inteligencia artificial básica de zonas de peligro (enemigos), coleccionables dinámicos mediante señales y la integración de una interfaz gráfica (GUI) reactiva vinculada a un singleton para el control de estados globales.",
+    technologies: ["Godot Engine", "GDScript", "Físicas 3D", "Modulación GUI", "Manejo de Señales", "Vector3 Math"],
+    githubUrl: "https://github.com/cristobaldp/Mi-Primer-Juego-3D-Godot"
   }
 ];
 
@@ -118,14 +170,13 @@ export default function Projects() {
       <header className="page-header">
         <span className="page-label">{'> portfolio.works'}</span>
         <h1 className="page-title">Proyectos Destacados</h1>
-        <p className="page-subtitle">Soluciones de software desarrolladas de principio a fin</p>
+        <p className="page-subtitle">Soluciones de software desarrolladas de principio a fin 100% escalables</p>
       </header>
 
       <div className="projects-grid">
         {projectsData.map((project) => (
           <article key={project.id} className="project-card">
             
-            {/* PORTADA ENLAZADA A GITHUB */}
             <a 
               href={project.githubUrl} 
               target="_blank" 
@@ -146,7 +197,6 @@ export default function Projects() {
               </div>
             </a>
 
-            {/* CONTENIDO TEXTUAL */}
             <div className="project-card__body">
               <span className="project-card__subtitle">{project.subtitle}</span>
               
@@ -164,7 +214,6 @@ export default function Projects() {
                 ))}
               </div>
 
-              {/* BOTONERA DE ACCIONES */}
               <div className="project-card__actions">
                 <a 
                   href={project.githubUrl} 
@@ -188,16 +237,15 @@ export default function Projects() {
                 {project.pdfDocumentation && (
                   <a 
                     href={project.pdfDocumentation} 
-                    download="Memoria_TFG_Cristobal_Delgado.pdf" 
+                    download={project.pdfDocumentation.split('/').pop()}
                     className="project-btn project-btn--pdf"
-                    title="Descargar Memoria del Proyecto en PDF"
+                    title="Descargar Memoria o Práctica en PDF"
                   >
-                    📄 Descargar Memoria (PDF)
+                    📄 Descargar Documentación (PDF)
                   </a>
                 )}
               </div>
 
-              {/* EXTRA: ARQUITECTURA TÉCNICA / ESQUEMAS */}
               {project.architectureDiagrams && (
                 <div className="project-card__architecture-section">
                   <div className="architecture-header">// Ingeniería de Software, Criptografía y Planificación</div>
@@ -221,7 +269,6 @@ export default function Projects() {
         ))}
       </div>
 
-      {/* VENTANA EMERGENTE (MODAL) */}
       {activeModalImage && (
         <div className="db-modal-overlay" onClick={closeModal}>
           <div className="db-modal-content" onClick={(e) => e.stopPropagation()}>
@@ -240,6 +287,7 @@ export default function Projects() {
             <div className="db-modal-image-wrapper">
               <img src={activeModalImage} alt={modalTitle} />
             </div>
+
           </div>
         </div>
       )}

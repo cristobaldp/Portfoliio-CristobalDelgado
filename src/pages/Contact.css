@@ -1,0 +1,124 @@
+/* Contenedor principal de la página */
+.page-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Cabecera estilo terminal/developer */
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-label {
+  font-family: monospace;
+  color: #58a6ff;
+  font-size: 14px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.page-title {
+  font-size: 32px;
+  color: #f0f6fc;
+  margin: 0 0 12px 0;
+  font-weight: 700;
+}
+
+.page-subtitle {
+  font-size: 16px;
+  color: #8b949e;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Tarjeta de Contacto (Siguiendo la estética de .project-card) */
+.about-card {
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card:hover {
+  border-color: #444c56;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.about-section-title {
+  font-size: 22px;
+  color: #f0f6fc;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.about-text {
+  font-size: 14.5px;
+  color: #c9d1d9;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* Lista de información */
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #30363d; /* Usa var(--border) si prefieres */
+}
+
+/* Elimina el borde inferior del último elemento */
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  color: #8b949e;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+.info-value {
+  color: #f0f6fc; /* Usa var(--text-h) si prefieres */
+  font-size: 14.5px;
+}
+
+.info-link {
+  color: #58a6ff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14.5px;
+  transition: color 0.2s ease, text-decoration 0.2s ease;
+}
+
+.info-link:hover {
+  color: #79c0ff;
+  text-decoration: underline;
+}
+
+/* RESPONSIVE MÓVIL */
+@media (max-width: 600px) {
+  .info-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 0;
+  }
+  
+  .page-title {
+    font-size: 28px;
+  }
+}

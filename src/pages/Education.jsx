@@ -1,4 +1,7 @@
+import './Education.css'; 
+
 export default function Education() {
+
   const educationList = [
     {
       period: '2024 — 2026',
@@ -36,53 +39,60 @@ export default function Education() {
 
   return (
     <div className="page-container">
-      {/* Cabecera de la página con estilo de archivo */}
+      {/* Cabecera de la página idéntica */}
       <div className="page-header">
         <span className="page-label">{'> education.edu'}</span>
         <h1 className="page-title">Formación Académica</h1>
         <p className="page-subtitle">Mi trayectoria educativa y certificaciones</p>
       </div>
 
-      {/* Grid principal reutilizando los estilos de tarjetas de "About" y "Experience" */}
-      <div className="about-grid" style={{ marginTop: '32px' }}>
-        <div className="about-main" style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+      {/* Estructura de dos columnas idéntica a About */}
+      <div className="about-grid-layout">
+        
+        {/* Columna Principal Izquierda */}
+        <div className="about-main-column">
           {educationList.map((edu, index) => (
-            <div key={index} className="about-card" style={{ textAlign: 'left' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '10px' }}>
+            <div key={index} className="about-card-panel" style={{ textAlign: 'left' }}>
+              
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '12px' }}>
                 <div>
-                  <span className="sidebar__role" style={{ fontSize: '12px', display: 'block', marginBottom: '4px' }}>
+                  <span className="education-meta-text">
                     {edu.period} · {edu.location}
                   </span>
-                  <h2 className="about-section-title" style={{ margin: 0, fontSize: '18px', lineHeight: '130%' }}>
+                  <h2 className="education-panel-item-title">
                     {edu.title}
                   </h2>
-                  <strong style={{ color: 'var(--text)', fontSize: '14px', display: 'block', marginTop: '4px' }}>
+                  <strong className="education-institution-highlight">
                     {edu.institution}
                   </strong>
                 </div>
-                <span className="skill-tag" style={{ background: 'var(--accent-bg)', color: 'var(--accent)', fontWeight: '600' }}>
+                {/* Badge con el mismo diseño nativo/verde de tus idiomas */}
+                <span className="custom-lang-badge native">
                   {edu.badge}
                 </span>
               </div>
-              <p className="about-text" style={{ marginTop: '12px', fontSize: '14.5px' }}>
+              
+              <p className="about-panel-text" style={{ marginTop: '14px', marginBottom: 0 }}>
                 {edu.description}
               </p>
+
             </div>
           ))}
         </div>
 
-        {/* Barra lateral para detalles adicionales del CV (Carnet de conducir) */}
-        <div className="about-sidebar">
-          <div className="about-card about-info" style={{ textAlign: 'left' }}>
-            <h2 className="about-section-title">Permisos y Otros</h2>
-            <ul className="info-list" style={{ padding: 0, margin: 0 }}>
-              <li style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0' }}>
+        {/* Columna Lateral Derecha (Sidebar) */}
+        <div className="about-sidebar-column">
+          <div className="about-card-panel" style={{ textAlign: 'left' }}>
+            <h2 className="about-panel-title">Permisos y Otros</h2>
+            <ul className="custom-data-list">
+              <li>
                 <span>Permiso de Conducción</span>
-                <strong className="skill-tag" style={{ margin: 0, padding: '2px 10px' }}>Clase B</strong>
+                <strong>Clase B</strong>
               </li>
             </ul>
           </div>
         </div>
+
       </div>
     </div>
   );

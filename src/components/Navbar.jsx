@@ -4,12 +4,12 @@ import './Navbar.css'
 
 // REESTRUCTURADO: Eliminamos Inicio, "Sobre mí" pasa a ser la raíz y añadimos Conocimientos
 const navItems = [
-  { path: '/', label: 'Sobre mí', icon: '⌂' },
-  { path: '/skills', label: 'Conocimientos', icon: '⚡' },
-  { path: '/experience', label: 'Experiencia', icon: '◈' },
-  { path: '/education', label: 'Formación', icon: '◻' },
-  { path: '/projects', label: 'Proyectos', icon: '◆' },
-  { path: '/contact', label: 'Contacto', icon: '◉' },
+  { path: '/', label: 'Sobre mí', icon: '⟨🖳⟩' },   // Terminal / Desarrollo
+  { path: '/skills', label: 'Conocimientos', icon: '⚙' },  // Configuración / Ingeniería
+  { path: '/experience', label: 'Experiencia', icon: '🗲' },  // Ejecución / Energía sutil
+  { path: '/education', label: 'Formación', icon: '🕮' },   // Documentación / Libro abierto
+  { path: '/projects', label: 'Proyectos', icon: '⬔' },   // Bloque modular / Construcción
+  { path: '/contact', label: 'Contacto', icon: '✉' },    // Mensaje / Correo
 ]
 
 export default function Navbar() {
@@ -32,7 +32,7 @@ export default function Navbar() {
         <div className="sidebar__header">
           <div className="sidebar__avatar">CD</div>
           <div className="sidebar__identity">
-            <span className="sidebar__name">Cristóbal Delgado</span>
+            <span className="sidebar__name">Cristóbal Delgado Peñaranda</span>
             <span className="sidebar__role">Software Developer</span>
           </div>
         </div>

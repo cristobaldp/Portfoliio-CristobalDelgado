@@ -9,33 +9,39 @@ export default function Contact() {
       </div>
 
       {/* Tarjeta de información */}
-      <div className="about-card" style={{ maxWidth: '600px', margin: '40px auto', textAlign: 'left' }}>
+      <div className="about-card">
         <h2 className="about-section-title">¡Conectemos!</h2>
-        <p className="about-text" style={{ marginBottom: '24px' }}>
+        <p className="about-text">
           Si buscas un desarrollador con iniciativa, experiencia en entornos reales y muchas ganas de aportar al equipo, no dudes en escribirme o echar un vistazo a mis redes.
         </p>
 
-        <ul className="info-list" style={{ padding: 0 }}>
-          <li style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
-            <span>Email</span>
-            <a href="mailto:cdelgadopenaranda@gmail.com" className="info-link" style={{ fontWeight: '600' }}>
+        <ul className="info-list">
+          <li className="info-item">
+            <span className="info-label">Email</span>
+            <a href="mailto:cdelgadopenaranda@gmail.com" className="info-link">
               cdelgadopenaranda@gmail.com
             </a>
           </li>
-          <li style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
-            <span>Ubicación</span>
-            <strong style={{ color: 'var(--text-h)' }}> Madrigueras, Albacete, España</strong>
-          </li>
-          <li style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0', borderBottom: '1px solid var(--border)' }}>
-            <span>GitHub</span>
-            <a href="https://github.com" target="_blank" rel="noreferrer" className="info-link" style={{ fontWeight: '600' }}>
-              github.com
+          <li className="info-item">
+            <span className="info-label">Teléfono</span>
+            <a href="tel:+34694402089" className="info-link">
+              +34 694 40 20 89
             </a>
           </li>
-          <li style={{ display: 'flex', justifyContent: 'space-between', padding: '12px 0' }}>
-            <span>LinkedIn</span>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" className="info-link" style={{ fontWeight: '600' }}>
-              linkedin.com
+          <li className="info-item">
+            <span className="info-label">Ubicación</span>
+            <strong className="info-value">Madrigueras, Albacete, España</strong>
+          </li>
+          <li className="info-item">
+            <span className="info-label">GitHub</span>
+            <a href="https://github.com/cristobaldp" target="_blank" rel="noreferrer" className="info-link">
+              github.com/cristobaldp
+            </a>
+          </li>
+          <li className="info-item">
+            <span className="info-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/cristóbal-delgado-peñaranda-99a28538b/" target="_blank" rel="noreferrer" className="info-link">
+              linkedin.com/in/cristóbal-delgado...
             </a>
           </li>
         </ul>
