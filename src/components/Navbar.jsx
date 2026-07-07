@@ -2,9 +2,8 @@ import { NavLink, useLocation } from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import './Navbar.css'
 
-// REESTRUCTURADO: Eliminamos Inicio, "Sobre mí" pasa a ser la raíz y añadimos Conocimientos
 const navItems = [
-  { path: '/', label: 'Sobre mí', icon: '⟨🖳⟩' },   // Terminal / Desarrollo
+  { path: '/about', label: 'Sobre mí', icon: '⟨🖳⟩' },   // Terminal / Desarrollo
   { path: '/skills', label: 'Conocimientos', icon: '⚙' },  // Configuración / Ingeniería
   { path: '/experience', label: 'Experiencia', icon: '🗲' },  // Ejecución / Energía sutil
   { path: '/education', label: 'Formación', icon: '🕮' },   // Documentación / Libro abierto
@@ -44,8 +43,7 @@ export default function Navbar() {
             <li key={path}>
               <NavLink
                 to={path}
-                // 'end' asegura que la ruta raíz '/' solo se marque activa si el path exacto es '/'
-                end={path === '/'}
+                end={path === '/about'}
                 className={({ isActive }) =>
                   `nav-item ${isActive ? 'nav-item--active' : ''}`
                 }

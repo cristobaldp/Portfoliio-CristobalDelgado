@@ -1,7 +1,6 @@
-import { Routes, Route, useLocation } from 'react-router-dom'
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
-// REEMPLAZADO: Eliminamos Home e importamos el nuevo componente de Conocimientos
 import About from './pages/About'
 import Skills from './pages/Skills' 
 import Experience from './pages/Experience'
@@ -34,12 +33,9 @@ function AnimatedRoutes() {
   return (
     <div className={`page-wrapper ${transitionStage}`}>
       <Routes location={displayLocation}>
-        {/* CORREGIDO: Ahora la raíz "/" carga directamente tu perfil "Sobre mí" */}
-        <Route path="/" element={<About />} />
-        
-        {/* NUEVA RUTA: Sección exclusiva para tu Stack Técnico */}
+        <Route path="/" element={<Navigate to="/about" replace />} />
+        <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
-        
         <Route path="/experience" element={<Experience />} />
         <Route path="/education" element={<Education />} />
         <Route path="/projects" element={<Projects />} />
