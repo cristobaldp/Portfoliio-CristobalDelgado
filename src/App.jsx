@@ -14,6 +14,7 @@ function AnimatedRoutes() {
   const [displayLocation, setDisplayLocation] = useState(location)
   const [transitionStage, setTransitionStage] = useState('page-enter-active')
 
+  // Controlar cambios de ruta para la animación
   useEffect(() => {
     if (location.pathname !== displayLocation.pathname) {
       setTransitionStage('page-enter')
@@ -30,16 +31,26 @@ function AnimatedRoutes() {
     }
   }, [transitionStage, location])
 
+  // CORRECCIÓN ADICIONAL: Asegurar que si displayLocation está vacío o desincronizado al arrancar, use la real
+  const currentSafeLocation = displayLocation.pathname ? displayLocation : location;
+
   return (
     <div className={`page-wrapper ${transitionStage}`}>
-      <Routes location={displayLocation}>
+      <Routes location={currentSafeLocation}>
+        {/* Al entrar a la raíz, redirige inmediatamente a /about */}
         <Route path="/" element={<Navigate to="/about" replace />} />
+        
+        {/* Tus rutas principales */}
         <Route path="/about" element={<About />} />
         <Route path="/skills" element={<Skills />} />
         <Route path="/experience" element={<Experience />} />
         <Route path="/education" element={<Education />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
+
+        {/* 🛡️ RUTA DE ESCAPE CRUCIAL: Si se pierde, recarga o escriben mal la URL, 
+            te manda al About en vez de dejar la pantalla en negro */}
+        <Route path="*" element={<Navigate to="/about" replace />} />
       </Routes>
     </div>
   )
