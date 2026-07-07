@@ -1,13 +1,13 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import './index.css'
-import App from './App.jsx'
+import { Routes, Route } from 'react-router-dom'
+import About from './pages/About.jsx'
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </StrictMode>,
-)
+function App() {
+  return (
+    <Routes>
+      {/* La ruta raíz redirige directamente a About */}
+      <Route path="/" element={<About />} />
+    </Routes>
+  )
+}
+
+export default App
