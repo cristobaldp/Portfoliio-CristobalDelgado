@@ -291,3 +291,49 @@
   margin: 0 12px;
   font-weight: bold;
 }
+
+/* ==========================================================================
+   MEJORAS RESPONSIVE PARA DISPOSITIVOS MÓVILES (NUEVO)
+   ========================================================================= */
+@media (max-width: 576px) {
+  /* Reducimos el padding general de los paneles para ganar espacio en pantalla */
+  .about-card-panel {
+    padding: 16px;
+  }
+
+  /* Los datos personales pasan a estar uno debajo del otro si no caben en línea */
+  .custom-data-list li {
+    flex-direction: column;
+    gap: 4px;
+    align-items: flex-start;
+  }
+
+  /* En la sección de idiomas, separamos la barra y el nivel abajo para evitar que colapsen */
+  .custom-lang-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .custom-lang-bar-container {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  /* Aseguramos que la cuadrícula de aptitudes baje a 1 columna en pantallas muy pequeñas */
+  .custom-traits-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  /* Centramos horizontalmente los botones de las pestañas en móvil para mejor ergonomía táctil */
+  .skills-horizontal-tabs {
+    justify-content: center;
+    gap: 10px; /* Un poco más de espacio para no fallar el clic */
+  }
+
+  /* Ajustamos el separador de tecnologías en línea para que no rompa el diseño */
+  .skill-inline-separator {
+    margin: 0 8px;
+  }
+}
