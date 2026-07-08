@@ -1,3 +1,7 @@
+/* ==========================================================================
+   ESTILOS BASE: BARRA LATERAL (ESCRITORIO)
+   ========================================================================== */
+
 .sidebar {
   width: 280px;
   background-color: var(--bg-sidebar);
@@ -9,8 +13,8 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  z-index: 100;
-  transition: transform 0.3s ease;
+  z-index: 1000; /* Incrementado para asegurar prioridad visual */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .sidebar__header {
@@ -31,12 +35,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
 }
 
 .sidebar__avatar-img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Hace que la foto no se deforme */
+  object-fit: cover;
 }
 
 .sidebar__identity {
@@ -76,12 +81,13 @@
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 10px 14px;
+  padding: 12px 16px; /* Ligeramente ampliado para mayor confort */
   color: var(--text-main);
   text-decoration: none;
   border-radius: 6px;
   font-size: 14px;
   transition: all 0.2s ease;
+  border-left: 3px solid transparent; /* Evita saltos visuales al activarse */
 }
 
 .nav-item:hover {
@@ -93,10 +99,13 @@
   background-color: var(--bg-card);
   color: var(--text-title);
   border-left: 3px solid var(--accent);
+  font-weight: 500;
 }
 
 .nav-item__icon {
   font-size: 16px;
+  width: 20px;
+  text-align: center;
 }
 
 .sidebar__footer {
@@ -120,22 +129,100 @@
   box-shadow: 0 0 8px var(--accent);
 }
 
-/* Hamburguesa móvil */
+/* Ocultar elementos de control móvil en versión de escritorio */
 .hamburger {
   display: none;
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  z-index: 110;
-  background: var(--bg-sidebar);
-  border: 1px solid var(--border);
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
 }
 
+.sidebar__overlay {
+  display: none;
+}
+
+/* ==========================================================================
+   MÓVIL Y TABLETS (RESPONSIVE ULTRA-INTUITIVO)
+   ========================================================================== */
+
 @media (max-width: 1024px) {
-  .hamburger { display: block; }
-  .sidebar { transform: translateX(-100%); }
-  .sidebar--open { transform: translateX(0); }
+  /* Ocultar la barra fuera de la pantalla de forma nativa */
+  .sidebar {
+    transform: translateX(-100%);
+    box-shadow: 20px 0 40px rgba(0, 0, 0, 0.5);
+    width: 290px;
+  }
+
+  /* Clase que activa React al pulsar el botón */
+  .sidebar--open {
+    transform: translateX(0);
+  }
+
+  /* Botón Hamburguesa Modernizado y Táctil */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    top: 16px;
+    left: 16px; /* Cambiado a la izquierda alineado simétricamente */
+    width: 46px;
+    height: 46px;
+    padding: 14px 12px;
+    z-index: 1100; /* Por encima de la barra lateral */
+    background: var(--bg-sidebar);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+  }
+
+  .hamburger:hover {
+    border-color: var(--text-main);
+    background-color: var(--bg-card);
+  }
+
+  /* Líneas internas de la hamburguesa */
+  .hamburger span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var(--text-title);
+    border-radius: 2px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+    transform-origin: left center;
+  }
+
+  /* Transformación interactiva a cruz (✕) */
+  .hamburger span.open:nth-child(1) {
+    transform: rotate(45deg) translate(2px, -1px);
+  }
+
+  .hamburger span.open:nth-child(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  .hamburger span.open:nth-child(3) {
+    transform: rotate(-45deg) translate(2px, 1px);
+  }
+
+  /* Capa borrosa difuminada de fondo (Cierra al pulsar fuera) */
+  .sidebar__overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px); /* Suavizado premium del fondo */
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 999;
+    animation: fadeInOverlay 0.2s ease-out forwards;
+  }
+}
+
+/* Animación de entrada para el desenfoque del fondo móvil */
+@keyframes fadeInOverlay {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
