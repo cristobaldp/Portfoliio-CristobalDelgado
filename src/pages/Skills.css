@@ -156,3 +156,68 @@
   color: #c9d1d9;
   font-size: 14px;
 }
+
+/* ==========================================================================
+   MEJORAS RESPONSIVE PARA EL PANEL DE DETALLES Y TARJETAS (NUEVO)
+   ========================================================================= */
+@media (max-width: 768px) {
+  /* En tablets y móviles reducimos el padding exagerado de 40px a 24px */
+  .skills-detail-panel {
+    padding: 24px;
+  }
+  
+  /* El título de 32px disminuye un poco para que no rompa en varias líneas */
+  .detail-title {
+    font-size: 24px;
+  }
+
+  /* Reducimos el margen inferior de la cabecera */
+  .detail-header {
+    margin-bottom: 24px;
+    gap: 16px;
+  }
+
+  .detail-large-logo {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* En móviles verticales reducimos la cuadrícula a un mínimo de 140px por botón */
+  .skills-grid-selector {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+  }
+
+  /* Volvemos las tarjetas de selección verticales en móviles pequeños para ahorrar espacio lateral */
+  .skill-card-btn {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 14px 10px;
+    gap: 10px;
+  }
+
+  /* Reducimos el padding interno del contenedor de detalles al mínimo */
+  .skills-detail-panel {
+    padding: 20px 16px;
+    border-radius: 12px;
+  }
+
+  /* Cambiamos la línea decorativa izquierda a la parte superior para aprovechar todo el ancho del texto */
+  .skills-detail-panel::before {
+    width: 100%;
+    height: 4px;
+  }
+
+  /* Reducimos las píldoras de tecnología un poco para que entren más por fila táctil */
+  .detail-pill {
+    padding: 8px 14px;
+    gap: 8px;
+  }
+  
+  .pill-text {
+    font-size: 13px;
+  }
+}
